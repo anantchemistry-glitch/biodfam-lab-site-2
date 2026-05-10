@@ -1,0 +1,934 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Bio- Medical Device Fabrication and Advanced Material Lab at SRM University Sikkim."
+  >
+  <title>Bio- Medical Device Fabrication and Advanced Material Lab | Bio-DFAM Lab</title>
+  <style>
+    :root {
+      --bg: #edf4ff;
+      --surface: #ffffff;
+      --surface-soft: #f5f9ff;
+      --navy: #11345f;
+      --navy-deep: #0b2748;
+      --blue: #2a6fba;
+      --blue-soft: #dcecff;
+      --line: #d6e4f5;
+      --text: #16314f;
+      --muted: #58708e;
+      --shadow: 0 14px 36px rgba(17, 52, 95, 0.08);
+      --container: 1180px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(42, 111, 186, 0.08), transparent 24%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(var(--container), calc(100% - 28px));
+      margin: 0 auto;
+      padding: 20px 0 44px;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--navy);
+      color: #ffffff;
+      padding: 14px 18px;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    .logo-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .lab-logo-shell {
+      width: 100%;
+      max-width: 210px;
+      padding: 14px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #ffffff, #f1f7ff);
+      border: 1px solid var(--line);
+    }
+
+    .logo-caption {
+      margin: 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .profile-label {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      color: var(--navy-deep);
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+    }
+
+    .subhead {
+      margin: 0 0 16px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .hero p {
+      margin-bottom: 14px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .button-secondary {
+      background: var(--surface-soft);
+      color: var(--navy);
+      border-color: var(--line);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+      gap: 18px;
+    }
+
+    .content-column,
+    .sidebar {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .section-title {
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .list-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .item {
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .item h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .person-card {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .featured-person .person-card {
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .featured-person .person-photo {
+      width: 160px;
+      height: 190px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-card {
+      padding: 12px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .gallery-card .person-photo {
+      width: 100%;
+      height: 180px;
+    }
+
+    .person-photo {
+      width: 110px;
+      height: 130px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #f7fbff, #e7f0fb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .scholar-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .meta-block {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .meta-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .meta-value {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .plain-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .plain-list li + li {
+      margin-top: 8px;
+    }
+
+    .editable {
+      outline: 1px dashed transparent;
+      outline-offset: 4px;
+      border-radius: 6px;
+      transition: outline-color 0.18s ease;
+    }
+
+    .editable:hover,
+    .editable:focus {
+      outline-color: rgba(42, 111, 186, 0.34);
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding: 16px 4px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-panel {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 16px, var(--container));
+      }
+
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero,
+      .card {
+        padding: 18px;
+      }
+
+      .person-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-nav">
+      <div class="brand editable" contenteditable="true">Bio-DFAM Lab</div>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#people">People</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section id="overview" class="hero">
+      <div class="logo-panel">
+        <div class="lab-logo-shell">
+          <img src="logo.png" alt="Bio-DFAM Lab logo">
+        </div>
+        <p class="logo-caption editable" contenteditable="true">Bio-DFAM Lab identity mark</p>
+        <div class="lab-logo-shell">
+          <img src="title.jpg" alt="Bio-DFAM title image">
+        </div>
+      </div>
+
+      <div>
+        <div class="profile-label editable" contenteditable="true">Research Laboratory Profile</div>
+        <h1 class="editable" contenteditable="true">Bio- Medical Device Fabrication and Advanced Material Lab</h1>
+        <p class="subhead editable" contenteditable="true">Bio-DFAM Lab • Department of Chemistry • SRM University Sikkim</p>
+        <p class="editable" contenteditable="true">
+          Bio-DFAM Lab is a research group at SRM University Sikkim working at the intersection of
+          biomedical device fabrication, advanced functional materials, sensing systems, and
+          image-based analysis workflows for practical healthcare and diagnostic applications.
+        </p>
+        <p class="editable" contenteditable="true">
+          The lab combines materials science, chemistry, embedded prototyping, and digital analysis
+          to build research outputs that are not only scientifically strong, but also suitable for
+          real-world translation.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#research">Research Areas</a>
+          <a class="button button-secondary" href="#contact">Contact The Lab</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card featured-person">
+      <div class="person-card">
+        <div>
+          <div class="person-photo">
+            <img src="pi-photo.jpg" alt="Principal Investigator photo">
+          </div>
+          <div class="photo-note">Photo file: pi-photo.jpg</div>
+        </div>
+        <div>
+          <h2 class="section-title editable" contenteditable="true">Founder &amp; Principal Investigator</h2>
+          <p class="editable" contenteditable="true"><strong>Dr. Anup Gurung</strong></p>
+          <p class="editable" contenteditable="true">
+            In Developing Nations, People do not die merely due to the absence of treatment; many
+            suffer because healthcare remains inaccessible (lack of point of care) and
+            unaffordable. This belief drives my research vision. I am Dr. Anup Gurung, Associate
+            Professor of Chemistry at SRM
+            University Sikkim, working in the areas of chemical sensors, porphyrin chemistry,
+            cancer and tuberculosis diagnostics, computational chemistry, and AI-driven
+            applications in chemistry. With over 12 years of academic and research experience, I
+            have contributed to funded research projects, peer-reviewed publications, patents, and
+            interdisciplinary innovations.
+          </p>
+          <p class="editable" contenteditable="true">
+            My research focuses on developing affordable, rapid, and accessible biomedical devices
+            (point of care devices) and therapeutic platforms, particularly for cancer and allied
+            healthcare challenges.
+            Using fundamental principles of chemistry integrated with modern interdisciplinary
+            approaches, my group works on biosensors, diagnostic technologies, smart materials, and
+            next-generation therapeutic systems aimed at improving healthcare accessibility.
+          </p>
+          <p class="editable" contenteditable="true">
+            The laboratory welcomes students and researchers from chemistry, biotechnology,
+            biomedical sciences, health sciences, pharmaceutical sciences, computational sciences,
+            and engineering backgrounds, reflecting the interdisciplinary nature of the work and
+            its translational healthcare goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="main-grid">
+      <main class="content-column">
+        <section id="research" class="card">
+          <h2 class="section-title">Research</h2>
+          <p class="section-intro editable" contenteditable="true">
+            The page is now structured more like an academic profile. You can keep these themes or
+            replace them with your exact research focus.
+          </p>
+          <div class="list-grid">
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Biomedical Device Fabrication</h3>
+              <p class="editable" contenteditable="true">
+                Our research group is dedicated to developing affordable, rapid, and user-friendly
+                biomedical devices and therapeutic platforms to address pressing challenges in cancer
+                and allied healthcare. By combining core principles of chemistry with modern
+                interdisciplinary strategies, we work toward creating accessible technologies that
+                support improved diagnosis, treatment, and patient care.
+              </p>
+              <p class="editable" contenteditable="true">
+                Our research spans biosensing, diagnostic device development, smart materials, drug
+                delivery systems, and healthcare-oriented therapeutic applications. The group brings
+                together expertise from chemistry, materials science, biology, health sciences,
+                engineering, and computational science, creating a highly collaborative research
+                environment. We welcome students from applied sciences, basic sciences, health
+                sciences, pharmaceutical sciences, biotechnology, biomedical sciences, and
+                engineering who are interested in contributing to impactful, solution-driven
+                research. Through this work, we aim to translate fundamental scientific advances
+                into practical healthcare innovations with real-world medical and societal value.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Advanced functional materials</h3>
+              <p class="editable" contenteditable="true">
+                Our research on advanced functional materials focuses on the synthesis of
+                heterocyclic-appended porphyrins, terpyridines, metal-organic frameworks (MOFs),
+                and covalent organic frameworks (COFs) for applications in anticancer therapeutics,
+                biological activity studies, and chemical sensing. These materials are particularly
+                explored for the selective detection of volatile organic compounds (VOCs), disease
+                biomarkers, and environmentally relevant analytes. Owing to their tunable
+                electronic, optical, and structural properties, these functional materials also
+                demonstrate potential applications in catalysis, photocatalysis, energy-related
+                systems, imaging, smart diagnostics, and next-generation healthcare technologies.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Colorimetric/electrochmeical VOC sensing</h3>
+              <p class="editable" contenteditable="true">
+                Our laboratory focuses on the development of advanced sensing platforms for the
+                detection of volatile organic compounds (VOCs) and clinically relevant disease
+                biomarkers using both electrochemical and colorimetric approaches. The research
+                includes sensing strategies for biomarkers associated with colorectal cancer, liver
+                cirrhosis, heart failure, tuberculosis, and other critical health conditions. In
+                parallel, the group also works on the detection of contraband substances, hazardous
+                chemicals, and explosive materials for environmental, forensic, and security-related
+                applications. By integrating functional materials, supramolecular chemistry, and
+                smart sensing technologies, the laboratory aims to develop rapid, selective,
+                portable, and cost-effective diagnostic and detection systems for real-world
+                applications.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Software Development through AI &amp; Integration</h3>
+              <p class="editable" contenteditable="true">
+                Our laboratory has partnered with A &amp; I Software Solutions for the development
+                and integration of software platforms, mobile applications, data analytics systems,
+                and statistical tools associated with the biomedical devices and sensing
+                technologies developed in the lab. The collaboration focuses on transforming
+                laboratory-scale innovations into market-ready technologies suitable for
+                publications, patents, translational research, and commercial applications. The
+                group also integrates computational tools such as molecular docking, molecular
+                dynamics simulations, cheminformatics, and predictive modeling with Artificial
+                Intelligence (AI) and data-driven approaches to accelerate material discovery,
+                therapeutic design, diagnostics, and smart healthcare solutions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="card">
+          <h2 class="section-title">Projects and Tools</h2>
+          <div class="list-grid">
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Exposure RGB Mapper</h3>
+              <p class="editable" contenteditable="true">
+                A web-based tool for comparing before and after exposure images, selecting crop
+                regions, measuring RGB shifts, and exporting structured sensor results.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Phone-assisted sensor analysis workflow</h3>
+              <p class="editable" contenteditable="true">
+                A lightweight image capture and analysis approach designed to make laboratory sensing
+                experiments easier to quantify outside specialized imaging setups.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Add your latest project here</h3>
+              <p class="editable" contenteditable="true">
+                Replace this block with your most recent funded work, student thesis, publication,
+                prototype, or active collaboration.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Completed &amp; Ongoing Funded Projects</h2>
+          <div class="item editable" contenteditable="true">
+            <p><strong>1. Fabrication of Colorimetric Testing Kit for early detection of Colorectal Cancer using Faecal Headspace Volatile Organic Compounds (FH-VOCs)</strong><br>Funding Agency: Directorate of Biotechnology (DBT), Government of India<br>Amount: 46.04 lakhs<br>Status: Phase-I Ongoing<br>Proposal ID: BT/PR49810/MED/32/936/2023<br>Role: PI<br>University: SRM University</p>
+            <p><strong>2. Synthesis, characterization and application of new terpyridine appended porphyrin for the sensing of Cd(II) at ppt level</strong><br>Funding Agency: SRM University Sikkim, Seed Grant<br>Amount: 8 lakhs<br>Status: Completed<br>Proposal ID: SRMUS/SG/2018-1<br>Role: PI<br>University: SRM University</p>
+            <p><strong>3. Harnessing Cannabis Sativa from the Himalayan Region: A Solution to Antimicrobial Resistance, Analgesic Dependency Specially for Cancer Patients, Autism and Anxiety Disorders</strong><br>Funding Agency: SRM University Sikkim, Seed Grant<br>Amount: 10 lakhs<br>Status: Ongoing<br>Proposal ID: SRMUS/SG/2025-1<br>Role: PI<br>University: SRM University</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Publications</h2>
+          <p class="section-intro editable" contenteditable="true">
+            Selected journal publications and research outputs from the laboratory.
+          </p>
+          <div class="item editable" contenteditable="true">
+            <p><strong>1. Fabrication of Porphyrin Based Colorimetric Sensor for the Detection of Liver Cirrhosis Biomarker</strong><br>Authors: Anup Gurung, Rushmika Gurung, Priyanka Kumari, Thinley Bhutia, Promodh Poudyal, Gyaltsen Pradhan<br>Journal: ChemRxiv, 2023<br>DOI: 10.26434/chemrxiv-2023-144cn</p>
+            <p><strong>2. Assessing the effectiveness of different chiral and achiral phosphoric acids in presence of thiourea co-catalyst in co-operative organocatalytic stereoselective glycosylation reactions</strong><br>Authors: Govind Pratap Singh, Raja Abirami and Anup Gurung<br>Journal: Indian Journal of Chemistry-B, 2020, Vol. 59B, Pg. 1206-1215</p>
+            <p><strong>3. One Pot Synthesis of Formyl benzyl terpyridine: A simplified synthesis</strong><br>Authors: Anup Gurung and Sanjay Dahal<br>Journal: Oriental Journal of Chemistry, 2016, Vol. 32, No. 2, Pg. 1261-1264</p>
+            <p><strong>4. Detection of cobalt(II) and copper(II) selectively using versatile fluorochemosensors in parts per trillion level in aqueous solution</strong><br>Authors: Anup Gurung, Antara Sharma, Sangay Bhutia, Sanjay Dahal<br>Journal: The Pharmaceutical and Chemical Journal, 2016, 3(1):149-153</p>
+            <p><strong>5. Breath Analysis in Tuberculosis Disease Recognition in New Millennium</strong><br>Authors: Ranabir Pal, Anup Gurung, Sangay Doma Bhutia, Antara Sharma, Sanjay Dahal<br>Journal: Journal of Microbiology and Biotechnology, Vol. 2, No. 3, 2013</p>
+            <p><strong>6. Colorimetric Sensor: The New Horizon In Health &amp; Disease</strong><br>Authors: Ranabir Pal, Anup Gurung, Sanjay Dahal<br>Journal: Asian Journal of Biochemical and Pharmaceutical Research, Issue 2, Vol. 3, 2013</p>
+            <p><strong>7. Spotting biomarkers of pulmonary tuberculosis in human exhaled breath using porphyrin based sensor array</strong><br>Authors: Ranabir Pal, Anup Gurung, Sangay Doma Bhutia, Antara Sharma, Sanjay Dahal<br>Journal: International Journal of Bioassays, Vol. 2, No. 07, 2013</p>
+            <p><strong>8. Exploring Modern Developments in Diverse 2D Photocatalysts for Water Oxidation</strong><br>Authors: P. P. Bag, D. K. Thapa, G. P. Singh, A. Maity and A. Gurung<br>Journal: J. Porous Mater., 2023</p>
+          </div>
+        </section>
+
+        <section id="people" class="card">
+          <h2 class="section-title">People</h2>
+          <div class="list-grid">
+            <div class="item">
+              <h3 class="editable" contenteditable="true">Research Scholars and Students</h3>
+              <div class="scholar-stack">
+                <div class="person-card">
+                  <div>
+                    <div class="person-photo">
+                      <img src="nikita.jpg" alt="Ms. Nikita Chettri photo">
+                    </div>
+                    <div class="photo-note">Photo file: nikita.jpg</div>
+                  </div>
+                  <div>
+                    <h3 class="editable" contenteditable="true">Ms. Nikita Chettri</h3>
+                    <p class="editable" contenteditable="true">
+                      Ms. Nikita Chettri is the first research scholar of the laboratory. Her research focuses on the development of low-cost and easy-to-use diagnostic systems for the early detection of oral and colorectal cancer. She has contributed to the development of an Oral Cancer Testing Kit and is associated with a granted patent in this area.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="person-card">
+                  <div>
+                    <div class="person-photo">
+                      <img src="priyanka.jpg" alt="Ms. Priyanka Basnett photo">
+                    </div>
+                    <div class="photo-note">Photo file: priyanka.jpg</div>
+                  </div>
+                  <div>
+                    <h3 class="editable" contenteditable="true">Ms. Priyanka Basnett</h3>
+                    <p class="editable" contenteditable="true">
+                      Ms. Priyanka Basnett is a DST INSPIRE Fellow, PhD scholar, and first-rank holder of the Department. Her research focuses on the synthesis of anti-cancer drug candidates and the development of colorimetric and electrochemical approaches for tuberculosis screening, with the aim of fabricating affordable diagnostic devices for rapid disease detection.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="person-card">
+                  <div>
+                    <div class="person-photo">
+                      <img src="israil.jpg" alt="Mr. Israil Ali photo">
+                    </div>
+                    <div class="photo-note">Photo file: israil.jpg</div>
+                  </div>
+                  <div>
+                    <h3 class="editable" contenteditable="true">Mr. Israil Ali</h3>
+                    <p class="editable" contenteditable="true">
+                      Mr. Israil Ali is a recently joined research scholar working on the development of electrochemical thin-film sensor systems for the early prediction and detection of heart attack-associated biomarkers. His research also involves the synthesis of metal phthalocyanine-based materials for thin-film fabrication, aiming to enhance the sensitivity and performance of next-generation electrochemical diagnostic devices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <h3 class="editable" contenteditable="true">MSc Major Projects</h3>
+              <div id="mscProjectsSlots" class="scholar-stack"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Gallery</h2>
+          <p class="section-intro editable" contenteditable="true">
+            Laboratory photographs, event snapshots, student activities, and research highlights.
+          </p>
+          <div class="gallery-grid">
+            <div class="gallery-card">
+              <div class="person-photo"><img src="1.jpg" alt="Gallery photo 1"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 1</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="2.jpg" alt="Gallery photo 2"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 2</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="3.jpg" alt="Gallery photo 3"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 3</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="4.jpg" alt="Gallery photo 4"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 4</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="5.jpg" alt="Gallery photo 5"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 5</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="6.jpg" alt="Gallery photo 6"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 6</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="7.jpg" alt="Gallery photo 7"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 7</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="8.jpg" alt="Gallery photo 8"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 8</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="9.jpg" alt="Gallery photo 9"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 9</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="10.jpg" alt="Gallery photo 10"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 10</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="11.jpg" alt="Gallery photo 11"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 11</p>
+            </div>
+            <div class="gallery-card">
+              <div class="person-photo"><img src="12.jpg" alt="Gallery photo 12"></div>
+              <p class="photo-note editable" contenteditable="true">Gallery photo 12</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <section class="card">
+          <h2 class="section-title">Profile Summary</h2>
+          <div class="meta-list">
+            <div class="meta-block">
+              <span class="meta-label">Institution</span>
+              <p class="meta-value editable" contenteditable="true">SRM University Sikkim</p>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Laboratory</span>
+              <p class="meta-value editable" contenteditable="true">Bio- Medical Device Fabrication and Advanced Material Lab</p>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Short Name</span>
+              <p class="meta-value editable" contenteditable="true">Bio-DFAM Lab</p>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Focus</span>
+              <p class="meta-value editable" contenteditable="true">Biomedical devices, advanced materials, sensing, diagnostics</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Research Interests</h2>
+          <ul class="plain-list editable" contenteditable="true">
+            <li>Biomedical device development</li>
+            <li>Advanced material fabrication</li>
+            <li>Colorimetric sensing</li>
+            <li>VOC and acetone analysis</li>
+            <li>Image-driven diagnostics</li>
+            <li>Low-cost healthcare instrumentation</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Patents</h2>
+          <div class="item editable" contenteditable="true">
+            <p><strong>1. Oral Testing Kit for Cancer</strong><br>Indian Design Patent<br>Application Number: 451611-001<br>Date of Filing: 15-03-05<br>University: SRM University, Sikkim</p>
+            <p><strong>2. A Clothing and Outfit for People Subjected to Extreme Climatic Conditions and Environment</strong><br>Indian Patent<br>Application Number: 201931039470<br>Date of Filing: 30-09-2019<br>University: SRM University, Sikkim</p>
+            <p><strong>3. A Chemical Sensor and a Method of Preparation Thereof</strong><br>Indian Patent<br>Application Number: 201731027531<br>Date of Filing: 02-08-2017<br>University: Sikkim Manipal University, Sikkim</p>
+            <p><strong>4. A Pharmaceutical Compound with Anti-Cancer Activity</strong><br>Indian Patent<br>Application Number: 201731027530<br>Date of Filing: 02-08-2017<br>University: Sikkim Manipal University, Sikkim</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Software Partners</h2>
+          <div class="item editable" contenteditable="true">
+            <p><strong>A &amp; I Software Solutions</strong></p>
+            <p>Members: Dr. Chelli Sai Manohar, Ms. Kasish Agarwal, Mrs. Kamala Thapa</p>
+          </div>
+        </section>
+
+        <section id="contact" class="card">
+          <h2 class="section-title">Contact</h2>
+          <div class="meta-list">
+            <div class="meta-block">
+              <span class="meta-label">Email</span>
+              <p class="meta-value editable" contenteditable="true">anantchemistry@gmail.com<br>anupgurung.a@srmus.edu.in</p>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Phone</span>
+              <p class="meta-value editable" contenteditable="true">+91-8575415373</p>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Address</span>
+              <p class="meta-value editable" contenteditable="true">Bio-DFAM Lab<br>Department of Chemistry<br>Science Block, Top Floor<br>SRM University Sikkim, Sikkim, India<br>Tadong, Gangtok-737102</p>
+            </div>
+            <div class="meta-block">
+              <h2 class="section-title editable" contenteditable="true">Vacancies in Lab</h2>
+              <p class="meta-value editable" contenteditable="true">
+                Dedicated and determined researchers, scholars, and internship aspirants are
+                encouraged to contact the laboratory through the email address or WhatsApp contact
+                details provided above.
+              </p>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <div class="footer editable" contenteditable="true">
+      Bio- Medical Device Fabrication and Advanced Material Lab (Bio-DFAM Lab) â€¢ SRM University
+      Sikkim â€¢ Last updated May 7, 2026
+    </div>
+  </div>
+
+  <script>
+    const mscProjectsContainer = document.getElementById("mscProjectsSlots");
+
+    if (mscProjectsContainer) {
+      for (let i = 1; i <= 15; i += 1) {
+        if (i === 8 || i === 15) continue;
+        const projectData = {
+          1: {
+            image: "priyankagupta.jpg",
+            alt: "Ms. Priyanka Gupta photo",
+            title: "Ms. Priyanka Gupta, MSc",
+            bio: "Ms. Priyanka Gupta completed her major research project in 2025 on the topic \"Synthesis of Triazine Appended Porphyrins as Precursors for POM and Glucose Penta-acetate Derivatives for Targeted Cancer Treatment and Fluorescence Imaging.\" Her work focused on the design and synthesis of porphyrin-based systems for targeted anticancer applications and bioimaging studies."
+          },
+          2: {
+            image: "dhanmayalimboo.jpg",
+            alt: "Ms. Dhan Maya Limboo photo",
+            title: "Ms. Dhan Maya Limboo, MSc",
+            bio: "Ms. Dhan Maya Limboo completed her major research project in 2025 on the topic \"Synthesis of Triazine Appended Porphyrins as Precursors for POM and Glucose Penta-acetate Derivatives for Targeted Cancer Treatment and Fluorescence Imaging.\" Her work focused on the design and synthesis of porphyrin-based systems for targeted anticancer applications and bioimaging studies."
+          },
+          3: {
+            image: "bibek.jpg",
+            alt: "Mr. Bibek Gupta photo",
+            title: "Mr. Bibek Gupta, MSc",
+            bio: "Mr. Bibek Gupta worked on the research project titled \"Photocatalytic Dye Degradation Using Different Nanomaterials Obtained from Laser Ablation Technology.\" His research focused on the synthesis and application of nanomaterials produced through laser ablation techniques for the efficient photocatalytic degradation of organic dye pollutants. The work explored the potential of advanced nanostructured materials for environmental remediation and sustainable wastewater treatment applications."
+          },
+          4: {
+            image: "kasish.jpg",
+            alt: "Ms. Kasish Agarwal photo",
+            title: "Ms. Kasish Agarwal, MSc",
+            bio: "Ms. Kasish Agarwal worked on the research project titled \"In Silico Design of Novel Drugs for the Treatment of Brain Cancer and Alopecia.\" Her research focused on computational drug design approaches, including molecular modeling and bioinformatics tools, to identify and develop potential therapeutic candidates targeting brain cancer and hair loss disorders."
+          },
+          5: {
+            image: "msc-project-5.jpg",
+            alt: "Mr. Ugen Wangchuk photo",
+            title: "Mr. Ugen Wangchuk, MSc",
+            bio: "Mr. Ugen Wangchuk worked on the research project titled \"Synthesis of Precursors for Mono- and Di-beta-POM Appended Porphyrins.\" His research focused on the design and synthesis of porphyrin-based precursor molecules functionalized with polyoxometalate (POM) moieties for potential applications in photodynamic therapy, catalysis, and advanced functional materials."
+          },
+          6: {
+            image: "msc-project-6.jpg",
+            alt: "Mr. Prince Kumar Saha photo",
+            title: "Mr. Prince Kumar Saha, MSc",
+            bio: "Mr. Prince Kumar Saha worked on the research project titled \"Photocatalytic Dye Degradation Using Different Nanomaterials Obtained from Laser Ablation Technology.\" His research focused on the fabrication and study of nanomaterials synthesized through laser ablation methods and their application in the photocatalytic degradation of dye pollutants. The work aimed to explore efficient and environmentally sustainable approaches for wastewater treatment and pollutant removal."
+          },
+          7: {
+            image: "pursotam.jpeg",
+            alt: "Mr. Pursotam Pradhan photo",
+            title: "Mr. Pursotam Pradhan, BSc",
+            bio: "Mr. Pursotam Pradhan worked on the research project titled \"Functionalized Terpyridine and Triazine Scaffolds: Synthesis Approaches and Applications in Sensing and Anticancer Activity.\" His research focused on the design and synthesis of functionalized terpyridine and triazine-based molecular scaffolds for potential applications in chemical sensing and anticancer therapeutics. The work involved synthetic organic chemistry approaches along with spectroscopic and analytical studies to explore their selective sensing properties and biological relevance in cancer-related applications."
+          },
+          10: {
+            image: "akumrenla longkumer.jpg",
+            alt: "Ms. Akumrenla Longkumer photo",
+            title: "Ms. Akumrenla Longkumer, MSc, 2024",
+            bio: "Ms. Akumrenla Longkumer worked on the research project titled \"Synthesis and Characterization of Novel Porphyrins for UV-Visible Sensing of Hg2+ Ions.\" Her research focused on the synthesis and spectroscopic characterization of novel porphyrin-based compounds for the selective detection of mercury ions using UV-visible sensing techniques. The study involved the design of functional porphyrin systems, analytical investigations of their sensing behavior, and evaluation of their potential applications in environmental and chemical sensing.",
+            imagePosition: "center 18%"
+          },
+          11: {
+            image: "narmada thakuri.jpg",
+            alt: "Ms. Narmada Thakuri photo",
+            title: "Ms. Narmada Thakuri, MSc, 2024",
+            bio: "Ms. Narmada Thakuri worked on the research project titled \"Multi-tool Molecular Docking Approaches for the Exploration of Cholinesterase Inhibitors in Alzheimer's Disease Treatment and Other Disorders.\" Her research focused on the application of computational drug discovery and molecular docking techniques to investigate potential cholinesterase inhibitors for the treatment of Alzheimer's disease and related neurological disorders. The work involved virtual screening, protein-ligand interaction studies, and bioinformatics-based analysis to identify promising therapeutic candidates with potential neuroprotective activity.",
+            imagePosition: "center 18%"
+          },
+          12: {
+            image: "pukar rai.jpg",
+            alt: "Mr. Pukar Rai photo",
+            title: "Mr. Pukar Rai, MSc, 2024",
+            bio: "Mr. Pukar Rai worked on the research project titled \"Synthesis of Tetraphenylporphyrin and its Ruthenium Derivatives for DNA Binding Studies.\" His research focused on the synthesis and characterization of tetraphenylporphyrin-based ruthenium complexes and the investigation of their interactions with DNA. The study involved synthetic inorganic and coordination chemistry approaches, spectroscopic characterization, and DNA binding studies to evaluate the potential of these compounds for biological and therapeutic applications.",
+            imagePosition: "center 18%"
+          },
+          13: {
+            image: "fabrication.jpg",
+            alt: "BSc major project 13 photo",
+            title: "Miss. Rushmika Gurung, BSc; Miss. Priyanka Kumari, BSc; Miss. Thinley Bhutia, BSc; Mr. Promodh Poudyal, BSc; Mr. Gyaltsen Pradhan, BSc",
+            bio: "Miss. Rushmika Gurung, Miss. Priyanka Kumari, Miss. Thinley Bhutia, Mr. Promodh Poudyal, and Mr. Gyaltsen Pradhan worked on the research project titled \"Fabrication of Porphyrin Based Colorimetric Sensor for the Detection of Liver Cirrhosis Biomarker.\" Their research focused on the development of a porphyrin-based colorimetric sensing platform for the selective and sensitive detection of biomarkers associated with liver cirrhosis. The work involved the synthesis and characterization of porphyrin sensor elements, RGB-based analytical studies, and evaluation of the sensor's response mechanism for potential point-of-care diagnostic applications. Their research work was published and has received citations for its contribution toward non-invasive disease diagnostics and sensor development.",
+            imageStyle: "object-fit: contain; object-position: center; background: #f5f9ff;"
+          },
+          14: {
+            image: "nisha.jpeg",
+            alt: "Ms. Nisha Basumurty photo",
+            title: "Ms. Nisha Basumurty, BSc, 2022",
+            bio: "Ms. Nisha Basumurty completed her B.Sc. final year project in 2022 titled \"Synthesis of Metal Derivatives of Porphyrins and their UV-Visible Characterizations.\" Her research focused on the synthesis of metalloporphyrin complexes through the incorporation of different metal ions into the porphyrin macrocycle and the subsequent characterization of the synthesized compounds using UV-Visible spectroscopy. The study aimed to investigate the electronic absorption behavior and spectral properties of the metal-substituted porphyrins, which are important for understanding their potential applications in catalysis, photodynamic therapy, sensing, and material science. The project provided valuable insights into coordination chemistry and spectroscopic analysis of functional porphyrin derivatives."
+          },
+          9: {
+            image: "sarina.jpeg",
+            alt: "Ms. Sarina Sunar Kami photo",
+            title: "Ms. Sarina Sunar Kami, BSc",
+            bio: "Ms. Sarina Sunar Kami worked on the research project titled \"Synthesis of POM-Appended Porphyrin for Sensing and Antimicrobial Activity.\" Her research focused on the synthesis and functionalization of polyoxometalate (POM)-appended porphyrin systems for potential applications in chemical sensing and antimicrobial studies. The work involved synthetic methodologies, spectroscopic characterization, and evaluation of the hybrid materials for selective sensing behavior and biological activity against microbial systems."
+          }
+        };
+        const currentProject = projectData[i] || {
+          image: `msc-project-${i}.jpg`,
+          alt: `MSc major project photo ${i}`,
+          title: `MSc Major Project ${i}`,
+          bio: "Add the student name, project title, supervisor details, and short project bio here."
+        };
+        const block = document.createElement("div");
+        block.className = "person-card";
+        block.innerHTML = `
+          <div>
+            <div class="person-photo">
+              <img src="${currentProject.image}" alt="${currentProject.alt}" style="${currentProject.imageStyle || (currentProject.imagePosition ? `object-position: ${currentProject.imagePosition};` : "")}">
+            </div>
+            <div class="photo-note">Photo file: ${currentProject.image}</div>
+          </div>
+          <div>
+            <h3 class="editable" contenteditable="true">${currentProject.title}</h3>
+            <p class="editable" contenteditable="true">
+              ${currentProject.bio}
+            </p>
+          </div>
+        `;
+        mscProjectsContainer.appendChild(block);
+      }
+    }
+  </script>
+</body>
+</html>
+
