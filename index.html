@@ -245,6 +245,87 @@
       font-size: 1.05rem;
     }
 
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .award-box {
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #f8fbff, #eef5ff);
+      border: 1px solid var(--line);
+    }
+
+    .award-tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--navy);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .award-box h3 {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .award-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pdf-card {
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #f8fbff, #eef5ff);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pdf-frame {
+      width: 100%;
+      height: 520px;
+      border: none;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .pdf-caption {
+      margin: 8px 4px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .pdf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .certificate-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .certificate-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      object-fit: cover;
+    }
+
     .person-card {
       display: grid;
       grid-template-columns: 110px minmax(0, 1fr);
@@ -759,13 +840,44 @@
         </section>
 
         <section class="card">
-          <h2 class="section-title">Major Achievements</h2>
-          <div class="item">
-            <p>1. Oral Cancer kit using Saliva, patent Granted.</p>
-            <p>2. Android app for Medical Device to Detect Cancer.</p>
-            <p>3. Jacket to keep body at room temeprature even at -50oC.</p>
-            <p>4. Sensor to predict Heart Attack.</p>
-            <p>5. Self operating BPKiosk to monitor Blood Pressure in Urban as well as Rural Settings.</p>
+          <h2 class="section-title">Awards and Certificates</h2>
+          <div class="certificate-stack">
+            <div class="pdf-card">
+              <iframe class="pdf-frame" src="patent.pdf" title="Patent PDF document"></iframe>
+              <p class="pdf-caption">Oral Cancer Testing Kit Patent Certificate</p>
+              <div class="pdf-actions">
+                <a class="button button-primary" href="patent.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                <a class="button button-secondary" href="patent.pdf" download>Download PDF</a>
+              </div>
+            </div>
+
+            <div class="pdf-card">
+              <iframe class="pdf-frame" src="1736258420987.pdf" title="Invited talk conference certificate PDF document"></iframe>
+              <p class="pdf-caption">Invited Talk in International Conference on Innovation and Chemical Sciences- 2025</p>
+              <div class="pdf-actions">
+                <a class="button button-primary" href="1736258420987.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                <a class="button button-secondary" href="1736258420987.pdf" download>Download PDF</a>
+              </div>
+            </div>
+
+            <div class="pdf-card">
+              <iframe class="pdf-frame" src="S&amp;A.pdf" title="Reviewer certificate PDF document"></iframe>
+              <p class="pdf-caption">Reviewer Certifcate on Brain Stroke @ Sensors and Actuators - B Chemical I.F- 8</p>
+              <div class="pdf-actions">
+                <a class="button button-primary" href="S&amp;A.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                <a class="button button-secondary" href="S&amp;A.pdf" download>Download PDF</a>
+              </div>
+            </div>
+
+            <div class="award-box">
+              <img class="certificate-image" src="NSD.jpg" alt="National Science Day 2026 guest of honor event photograph">
+              <h3>Guest of Honor, National Science Day 2026</h3>
+              <p>
+                Invited as Guest of Honor to deliver a talk on <strong>February 28, 2026</strong>
+                during National Science Day under the theme
+                <strong>“Women in Science: Catalysing Viksit Bharat”</strong>.
+              </p>
+            </div>
           </div>
         </section>
 
